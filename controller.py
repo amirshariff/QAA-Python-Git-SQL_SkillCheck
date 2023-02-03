@@ -19,4 +19,4 @@ print(
     """
 )
 
-print(service.getAll())
+# print(service.getAll())
