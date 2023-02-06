@@ -1,8 +1,25 @@
-# The DB file contains the processes and functions to create our Database or connect to it as well as run the initial SQL
-# The DB file should also contain query functions that the Service file can use to read or modify the data
+import sqlite3 as sql
 
-import sqlite3
+# Connection - Where is the database stored, and any passwords needed
+# Cursor - Virtual tool to navigate a DB 
+# Query - What request / query are we sending to the DB 
 
-def setupConn(db_name):
-    conn = sqlite3.connect(db_name)
-    return conn
+# Connect to test-db, if it doesn't exist it creates it  
+conn = sql.connect("my_cafe_db")
+
+# Create our cursor, which is a function which is part of connection
+cursor = conn.cursor()
+
+# Python is reading our sql file and saving a String of content
+sql_file = open("orders.sql")
+sql_string = sql_file.read()
+# Python is running this SQL string inside of our DB 
+#cursor.executescript(sql_string)
+
+def runQuery(query):
+    data = cursor.execute(query).fetchall()
+    return data
+
+
+# Saving the data into the db created via cursor stuff
+conn.commit()
