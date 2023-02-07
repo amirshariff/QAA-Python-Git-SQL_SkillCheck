@@ -22,7 +22,7 @@ def choice():
     if choice == 1:
          create_record()
     elif choice == 2:
-         print("Read an order")
+         print("read_an_order()")
     elif choice == 3:
          print("Read all Orders")
     elif choice == 4:
@@ -40,5 +40,20 @@ def create_record():
     size = input("How big do you want your drink: Small: Medium: Large: ")
     price = input("Please enter the cost: ")
     create(customer_name,drink,size,price)
+
+def delete_orders():
+    return delete_all()
+
+def read_an_order():
+    id = input('please enter your order ID: ')
+    return read_Id(id)
+
+def delete_an_order():
+    id = input('Please enter an order id to delete that order: ')
+    return delete_order(id)
+
+
+
+
 
 choice()
