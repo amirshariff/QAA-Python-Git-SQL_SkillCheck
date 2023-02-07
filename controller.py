@@ -1,6 +1,6 @@
 from service import *
-# import db
-import service
+import db
+
 
 print(
     """
@@ -35,11 +35,10 @@ def choice():
 
 
 def create_record():
-    customer_name = input("Enter your name: ")
-    drink = input("What drink would you like: ")
-    size = input("How big do you want your drink: ")
-    extras = input("Would you like anything else with your drink?: ")
-    price = input("This will cost: ")
-    create(customer_name,drink,size,extras,price)
+    customer_name = input("Please enter your name: ")
+    drink = input("What would you like to drink: ")
+    size = input("How big do you want your drink: Small: Medium: Large: ")
+    price = input("Please enter the cost: ")
+    create(customer_name,drink,size,price)
 
 choice()

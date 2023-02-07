@@ -8,7 +8,7 @@ def read_by_id(id):
 def create (customer_name, drink, size, extras, price):
     insert_str = f"INSERT INTO cafe (customer_name, drink, size, extras, price) VALUES ('{customer_name}','{drink}','{size}','{extras}','{price}');"
     runQuery(insert_str)
-    show_str = f"SELECT cafe FROM cafe-db (customer_name, drink, size, extras, price) VALUES ('{customer_name}','{drink}','{size}','{extras}','{price}');"
+    show_str = f"SELECT cafe FROM ,my_cafe_db (customer_name, drink, size, extras, price) VALUES ('{customer_name}','{drink}','{size}','{extras}','{price}');"
     runQuery(show_str)
     return True
     
