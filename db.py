@@ -6,7 +6,7 @@ from service import *
 # Query - What request / query are we sending to the DB 
 
 # Connect to test-db, if it doesn't exist it creates it  
-conn = sql.connect("my_cafe_db")
+conn = sql.connect("my_cafe_db1")
 
 # Create our cursor, which is a function which is part of connection
 cursor = conn.cursor()
@@ -15,7 +15,7 @@ cursor = conn.cursor()
 sql_file = open("orders.sql")
 sql_string = sql_file.read()
 # Python is running this SQL string inside of our DB 
-#cursor.executescript(sql_string)
+cursor.executescript(sql_string)
 
 def runQuery(query):
     data = cursor.execute(query).fetchall()
