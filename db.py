@@ -1,4 +1,5 @@
 import sqlite3 as sql
+from service import *
 
 # Connection - Where is the database stored, and any passwords needed
 # Cursor - Virtual tool to navigate a DB 
@@ -20,6 +21,22 @@ def runQuery(query):
     data = cursor.execute(query).fetchall()
     return data
 
+def view_all_records():
+    query = 'SELECT * FROM my_cafe;'
+    data = runQuery(query)
+    return data
+
+def createOrder(customer_name, drink, size, price):
+    query = f"INSERT INTO orders (customer_name, drink, size, extras, price) VALUES ('{customer_name}', '{drink}', '{size}', '{price}');"
+    runQuery(query)
+ 
+
+def viewAnOrder(id):
+    query= f"SELECT * FROM orders WHERE order_id = {id}"
+    runQuery(query)
+
+
+       
 
 # Saving the data into the db created via cursor stuff
 conn.commit()
