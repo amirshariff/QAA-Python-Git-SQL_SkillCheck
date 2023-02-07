@@ -8,5 +8,4 @@
    #    self.drink_size = drink_size
    #    self.price = price
 
-   # def create_order_object(self):
-   #    print('customer: ' + self.customer_name + ', drink size: ' + self.drink_size + ', extras: ' + self.extras + ', price: ' + str(self.price))
+   
